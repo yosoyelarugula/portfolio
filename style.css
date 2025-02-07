@@ -289,14 +289,22 @@ span{
     }
 }
 
-/* Add to your styles.css */
-#projects-container {
+.projects-wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
     padding: 2rem;
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
+/* Update the margin on project cards since they're now in a container */
 .project-card {
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(74, 222, 128, 0.1);
@@ -308,63 +316,8 @@ span{
     transition: transform 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-image {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    background: #1a1a1a;
-}
-
 .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.project-title {
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 1.5rem;
-    color: white;
-    margin: 0;
-}
+    width: 50%;
 
-.project-description {
-    font-family: 'Fira Sans', sans-serif;
-    color: #999;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: auto;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    background: rgba(74, 222, 128, 0.1);
-    color: rgb(74, 222, 128);
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-family: 'Fira Sans', sans-serif;
-    transition: background 0.3s ease;
-}
-
-.project-link:hover {
-    background: rgba(74, 222, 128, 0.2);
-}
-
-.project-link svg {
-    margin-right: 0.5rem;
-    width: 1.2rem;
-    height: 1.2rem;
 }
