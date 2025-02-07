@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 html{
@@ -120,6 +121,7 @@ section{
 
 span{
     color: #539e30;
+    font-family: 'Fira Code', sans-serif;
 }
 
 .home-content h3{
@@ -200,16 +202,19 @@ span{
 }
 
 .typing-text span{
+    font-family: 'Fira Code', sans-serif;
     position: relative;
 }
 
 .typing-text span::before{
+    font-family: 'Fira Code', sans-serif;
     content: "software Developer";
     color: #539e30;
     animation: words 20s infinite;
 }
 
 .typing-text span::after{
+    font-family: 'Fira Code', sans-serif;
     content: "";
     background-color: black;
     position: absolute;
@@ -220,25 +225,42 @@ span{
     animation: cursor 0.6s infinite;
 }
 
-@keyframes cursor{
-    to{
-        border-left: 3px solid #539e30;
+
+@keyframes words {
+    0%, 18% {
+        content: "web developer";
+        opacity: 1;
+    }
+    19%, 20% {
+        opacity: 0;
+    }
+    21%, 38% {
+        content: "developer";
+        opacity: 1;
+    }
+    39%, 40% {
+        opacity: 0;
+    }
+    41%, 58% {
+        content: "youtuber";
+        opacity: 1;
+    }
+    59%, 60% {
+        opacity: 0;
+    }
+    61%, 98% {
+        content: "100% w gamer";
+        opacity: 1;
+    }
+    99%, 100% {
+        opacity: 0;
     }
 }
 
-@keyframes words{
-    0%, 20%{
-        content: "web developer";
-    }
-    21%, 40%{
-        content: "developer";
-    }
-    61%, 80%{
-        content: "youtuber";
-    }
-    81%, 100%{
-        content: "100% w gamer";
-    }
+.typing-text span::before {
+    font-family: 'Fira Code', sans-serif;
+    content: "web developer";
+    animation: words 8s infinite;
 }
 
 @media (max-width: 1000px){
@@ -265,4 +287,84 @@ span{
         width: 70vw;
         margin-top: 4rem;
     }
+}
+
+/* Add to your styles.css */
+#projects-container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-title {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+
+.project-description {
+    font-family: 'Fira Sans', sans-serif;
+    color: #999;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background: rgba(74, 222, 128, 0.1);
+    color: rgb(74, 222, 128);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+    transition: background 0.3s ease;
+}
+
+.project-link:hover {
+    background: rgba(74, 222, 128, 0.2);
+}
+
+.project-link svg {
+    margin-right: 0.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
 }

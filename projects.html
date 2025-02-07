@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <title>About Me - Gort Arugula</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="#" class="logo">arugula</a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+
+        </nav>
+
+    </header>
+
+
+    <div id="projects-container"></div>
+
+    <script>
+        async function loadProjects() {
+            try {
+                const response = await fetch('json/projects.json');
+                const data = await response.json();
+                const container = document.getElementById('projects-container');
+
+                data.projects.forEach(project => {
+                    const projectElement = `
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="${project.image}" alt="${project.name}">
+                            </div>
+                            <h2 class="project-title">${project.name}</h2>
+                            <p class="project-description">${project.description}</p>
+                            <div class="social-icons">
+                                <a href="${project.github}" class="project-link" target="_blank">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                    </svg>
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="${project.demo}" class="project-link" target="_blank">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6 M15 3h6v6 M10 14L21 3"/>
+                                    </svg>
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += projectElement;
+                });
+            } catch (error) {
+                console.error('Error loading projects:', error);
+            }
+        }
+
+        loadProjects();
+    </script>
+
+</body>
+
+</html>

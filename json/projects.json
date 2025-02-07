@@ -1,0 +1,14 @@
+{
+
+    "projects": [
+
+      {
+        "name": "Fennecxx' Hyper Engine",
+        "image": "/assets/images/fennexx.png",
+        "description": "a discrete, hyper fast games website, designed for school gaming in mind.",
+        "github": "https://github.com/kohenheard/Fennecxx-Hyper-Engine",
+        "demo": "#"
+      }
+    ]
+
+  }
